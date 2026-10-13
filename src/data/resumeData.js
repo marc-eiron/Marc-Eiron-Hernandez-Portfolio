@@ -17,7 +17,6 @@ export const resume = {
     { label: 'Application & Automation', items: ['Microsoft Power Apps', 'Microsoft Power Automate'] },
     { label: 'Database & Backend', items: ['MongoDB', 'Microsoft SharePoint', 'Firebase', 'Flask'] },
     { label: 'IoT & Embedded Systems', items: ['ESP32', 'Arduino IDE', 'C++'] },
-    { label: 'Machine Learning', items: ['LSTM'] },
   ],
   experience: [
     {
@@ -33,6 +32,15 @@ export const resume = {
     },
   ],
   projects: [
+    {
+      title: 'BARDY',
+      subtitle: 'Offline AI Study Companion',
+      highlights: [
+        'Developed a desktop application designed to help users stay focused on their studies, using Tauri 2 for desktop application integration.',
+        'Integrated Ollama to provide offline AI assistance, allowing users to interact with an AI companion while studying independently. The application also features offline task tracking, enabling users to set goals and monitor their progress to make studying more engaging.',
+        'Implemented a social media blocking feature to minimize distractions and improve study focus. Users must complete their designated tasks and achieve their progress goals before they can unblock access to social media platforms.',
+      ],
+    },
     {
       title: 'Xtravagala',
       subtitle: 'Event Organization & Management Web Application',
@@ -91,6 +99,7 @@ export const resume = {
     'DLSL Campus Technology Talk featuring Generative AI – Facilitated by Accenture, De La Salle Lipa',
     'Facial Expression Recognition Seminar – De La Salle Lipa',
     'Makati Medical Center Internship Program – Makati Medical Center',
+    'AppBuildersPH Hackathon – Cyberzone, SM Makati',
   ],
   organizations: ['Junior Philippines Computer Society – Lipa Chapter | Member, 2023 – Present'],
   references: [
