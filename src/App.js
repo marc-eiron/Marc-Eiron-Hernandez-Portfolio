@@ -14,30 +14,32 @@ import { portfolio } from './data/portfolioData';
 
 function App() {
   return (
-    <div className="App">
+    <>
       <BackgroundFX />
-      <ScrollProgress />
-      <Header name={portfolio.shortName} />
-      <main>
-        <Hero
-          name={portfolio.name}
-          roles={portfolio.roles}
-          tagline={portfolio.tagline}
-        />
-        <About about={portfolio.about} />
-        <Skills skills={portfolio.skills} />
-        <Projects projects={portfolio.projects} />
-        <Experience experience={portfolio.experience} />
-        <Contact
-          email={portfolio.email}
-          phone={portfolio.phone}
-          social={portfolio.social}
-          location={portfolio.location}
-        />
-      </main>
-      <Footer name={portfolio.name} />
-      <BackToTop />
-    </div>
+      <div className="App">
+        <ScrollProgress />
+        <Header name={portfolio.shortName} />
+        <main>
+          <Hero
+            name={portfolio.name}
+            roles={portfolio.roles}
+            tagline={portfolio.tagline}
+          />
+          <About about={portfolio.about} />
+          <Skills skills={portfolio.skills} />
+          <Projects projects={portfolio.projects} />
+          <Experience experience={portfolio.experience} />
+          <Contact
+            email={portfolio.email}
+            phone={portfolio.phone}
+            social={portfolio.social}
+            location={portfolio.location}
+          />
+        </main>
+        <Footer name={portfolio.name} />
+        <BackToTop />
+      </div>
+    </>
   );
 }
 

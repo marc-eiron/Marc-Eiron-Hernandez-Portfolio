@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import ThemeToggle from './ThemeToggle';
 
 const navLinks = [
   { href: '#about', label: 'About' },
@@ -76,6 +77,7 @@ function Header({ name }) {
               {link.label}
             </a>
           ))}
+          <ThemeToggle />
         </nav>
       </div>
     </header>
