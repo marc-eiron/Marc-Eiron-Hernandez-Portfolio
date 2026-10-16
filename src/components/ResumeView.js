@@ -33,7 +33,7 @@ function ResumeView() {
       </section>
 
       <section className="resume-view-section">
-        <h3>Work Experience</h3>
+        <h3>Internship Accomplishments</h3>
         {resume.experience.map((job) => (
           <article key={job.company} className="resume-entry">
             <div className="resume-entry-header">
