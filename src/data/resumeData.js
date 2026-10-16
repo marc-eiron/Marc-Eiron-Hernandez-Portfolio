@@ -2,6 +2,7 @@ export const resume = {
   name: 'Marc Eiron P. Hernandez',
   headline: 'Computer Science Graduate | Software Development | Web Development',
   contactLine: '0939-184-8365 · mark24hernandez@gmail.com · Tanauan City, Batangas, Philippines',
+  portfolioUrl: 'https://marc-eiron-hernandez-portfolio.vercel.app/',
   summary:
     'Recent Bachelor of Science in Computer Science graduate from De La Salle Lipa with hands-on ' +
     'experience in software development, web applications, database integration, automation, ' +
@@ -35,6 +36,7 @@ export const resume = {
     {
       title: 'BARDY',
       subtitle: 'Offline AI Study Companion',
+      tech: ['Ollama', 'TypeScript', 'Tauri', 'Rust', 'Python', 'FastAPI', 'SQLite'],
       highlights: [
         'Developed a desktop application designed to help users stay focused on their studies, using Tauri 2 for desktop application integration.',
         'Integrated Ollama to provide offline AI assistance, allowing users to interact with an AI companion while studying independently. The application also features offline task tracking, enabling users to set goals and monitor their progress to make studying more engaging.',
@@ -44,6 +46,7 @@ export const resume = {
     {
       title: 'Xtravagala',
       subtitle: 'Event Organization & Management Web Application',
+      tech: ['React', 'MongoDB', 'GitHub'],
       highlights: [
         'Developed a React-based web application for event organizers and attendees, with MongoDB used for data storage.',
         'Implemented organizer functionality for account login, event creation, event location and schedule, event type, capacity, and other event details.',
@@ -53,6 +56,7 @@ export const resume = {
     {
       title: 'Caffeinate',
       subtitle: 'Coffee Shop POS Mobile Application',
+      tech: ['React Native', 'Expo Go', 'MongoDB', 'GitHub'],
       highlights: [
         'Personally developed a React Native point-of-sale application for coffee shop operations, with MongoDB used as the database and the application tested through Expo Go.',
         'Implemented core POS functionality including product selection, add-to-cart, checkout, payments, inventory/stock checking, and related transaction workflows.',
@@ -61,6 +65,7 @@ export const resume = {
     {
       title: 'LIPAir CAST',
       subtitle: 'IoT-Based Air Quality Monitoring and Volcanic Smog Forecasting in Lipa City Using LSTM',
+      tech: ['Python', 'C++', 'React', 'Firebase', 'Flask', 'GitHub', 'Render'],
       highlights: [
         'Developed an IoT-based device for monitoring air quality in Lipa City, Batangas, with data presented through a public-facing web application.',
         'Developed the backend using Firebase and Flask to support data management and integration of the machine learning model.',
@@ -70,6 +75,7 @@ export const resume = {
     {
       title: 'MHUB Equipment Reservation System',
       subtitle: null,
+      tech: ['React', 'Supabase', 'GitHub'],
       highlights: [
         'Developed a web-based multimedia equipment reservation system that allows students to reserve school equipment without visiting the office to queue.',
         "Designed the web application's UI/UX and connected the database design to support system functionality.",
@@ -103,7 +109,17 @@ export const resume = {
   ],
   organizations: ['Junior Philippines Computer Society – Lipa Chapter | Member, 2023 – Present'],
   references: [
-    { name: 'Adomar R. Ilao', title: 'BSIT Program Chair, Mapua Malayan College Laguna' },
-    { name: 'Donna Garcia', title: 'BSCS Program Chair, De La Salle Lipa' },
+    {
+      name: 'Adomar R. Ilao',
+      title: 'BSIT Program Chair, Mapua Malayan College Laguna',
+      email: 'alilao@mcl.edu.ph',
+      phone: '(049) 832-4076',
+    },
+    {
+      name: 'Donna Garcia',
+      title: 'BSCS Program Chair, De La Salle Lipa',
+      email: 'donna.garcia@dlsl.edu.ph',
+      phone: '0917592944',
+    },
   ],
 };

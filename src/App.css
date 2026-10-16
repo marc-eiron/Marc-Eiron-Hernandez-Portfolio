@@ -1589,6 +1589,31 @@ a.contact-card:hover .contact-card-icon {
   color: var(--color-text);
 }
 
+.resume-reference-contact {
+  display: block;
+  font-size: 0.82rem;
+  font-family: var(--font-mono);
+}
+
+.resume-view-contact a,
+.resume-reference-contact a {
+  color: var(--color-accent);
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.resume-view-contact a:hover,
+.resume-reference-contact a:hover {
+  text-decoration: underline;
+}
+
+.resume-entry-tech {
+  margin: 0 0 0.5rem;
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  color: var(--color-accent);
+}
+
 .resume-view-note {
   margin: 0.6rem 0 0;
   font-size: 0.78rem;

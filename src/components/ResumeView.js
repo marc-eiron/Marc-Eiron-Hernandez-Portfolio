@@ -7,6 +7,12 @@ function ResumeView() {
         <h2>{resume.name}</h2>
         <p className="resume-view-headline">{resume.headline}</p>
         <p className="resume-view-contact">{resume.contactLine}</p>
+        <p className="resume-view-contact">
+          Portfolio:{' '}
+          <a href={resume.portfolioUrl} target="_blank" rel="noopener noreferrer">
+            {resume.portfolioUrl}
+          </a>
+        </p>
       </header>
 
       <section className="resume-view-section">
@@ -60,6 +66,9 @@ function ResumeView() {
                 )}
               </h4>
             </div>
+            {project.tech && (
+              <p className="resume-entry-tech">{project.tech.join(' · ')}</p>
+            )}
             <ul>
               {project.highlights.map((point) => (
                 <li key={point}>{point}</li>
@@ -106,10 +115,12 @@ function ResumeView() {
           {resume.references.map((ref) => (
             <li key={ref.name}>
               <strong>{ref.name}</strong> — {ref.title}
+              <span className="resume-reference-contact">
+                Email: <a href={`mailto:${ref.email}`}>{ref.email}</a> · Phone: {ref.phone}
+              </span>
             </li>
           ))}
         </ul>
-        <p className="resume-view-note">Full contact details available upon request.</p>
       </section>
     </div>
   );
