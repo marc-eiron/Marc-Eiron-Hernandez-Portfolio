@@ -12,13 +12,13 @@ const codeFragments = [
   { text: '0xFF', x: '82%', y: '85%', delay: '-3s', dur: '17s' },
 ];
 
-const stats = [
-  { value: '4+', label: 'Projects Built' },
-  { value: '19', label: 'Tech Skills' },
-  { value: '324', label: 'Intern Hours' },
-];
+function Hero({ name, roles, tagline, projectCount }) {
+  const stats = [
+    { value: `${projectCount}+`, label: 'Projects Built' },
+    { value: '19', label: 'Tech Skills' },
+    { value: '324', label: 'Intern Hours' },
+  ];
 
-function Hero({ name, roles, tagline }) {
   return (
     <section id="home" className="hero">
       <div className="hero-blob hero-blob-1" aria-hidden="true" />

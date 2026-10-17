@@ -87,6 +87,33 @@ export const portfolio = {
       liveUrl: '#',
       repoUrl: '#',
     },
+    {
+      title: 'Xtravagala',
+      description:
+        'An event organization and management web app for organizers and attendees. Organizers create events with location, schedule, type, and capacity, while attendees track the events they are joining, receive notifications, and add events to their calendar.',
+      tech: ['React', 'MongoDB', 'GitHub'],
+      images: screenshots('xtravagala', 6),
+      liveUrl: '#',
+      repoUrl: '#',
+    },
+    {
+      title: 'Inventory Management System',
+      description:
+        'A web-based inventory management system that helps a company organize its stock efficiently. Supports full CRUD operations to keep item records accurate, plus sorting by item ID, stock quantity, and category for easier tracking.',
+      tech: ['React', 'MongoDB', 'Git'],
+      images: screenshots('inventory', 8),
+      liveUrl: '#',
+      repoUrl: '#',
+    },
+    {
+      title: 'Job Finder',
+      description:
+        'A mobile app for searching job opportunities, applying to suitable positions, and tracking applications. Pulls live job listings from a REST API and uses MongoDB to store saved jobs and application records.',
+      tech: ['React Native', 'MongoDB', 'REST API', 'Git', 'Expo Go'],
+      images: screenshots('jobfinder', 4),
+      liveUrl: '#',
+      repoUrl: '#',
+    },
   ],
   experience: [
     {

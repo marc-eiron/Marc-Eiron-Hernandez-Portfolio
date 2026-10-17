@@ -24,6 +24,7 @@ function App() {
             name={portfolio.name}
             roles={portfolio.roles}
             tagline={portfolio.tagline}
+            projectCount={portfolio.projects.length}
           />
           <About about={portfolio.about} />
           <Skills skills={portfolio.skills} />
