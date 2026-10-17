@@ -1,5 +1,7 @@
-import { useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import Reveal from './Reveal';
+import Modal from './Modal';
+import ProjectGallery from './ProjectGallery';
 
 function handleTilt(event) {
   const card = event.currentTarget;
@@ -22,28 +24,93 @@ function resetTilt(event) {
   card.style.setProperty('--rotate-y', '0deg');
 }
 
-const VISIBLE_COUNT = 3;
-
 function Projects({ projects }) {
-  const [expanded, setExpanded] = useState(false);
-  const visible = expanded ? projects : projects.slice(0, VISIBLE_COUNT);
-  const hasMore = projects.length > VISIBLE_COUNT;
+  const [galleryProject, setGalleryProject] = useState(null);
+  const trackRef = useRef(null);
+  const [canScroll, setCanScroll] = useState({ left: false, right: false });
+
+  const updateScrollState = useCallback(() => {
+    const track = trackRef.current;
+    if (!track) return;
+    setCanScroll({
+      left: track.scrollLeft > 4,
+      right: track.scrollLeft + track.clientWidth < track.scrollWidth - 4,
+    });
+  }, []);
+
+  useEffect(() => {
+    updateScrollState();
+    window.addEventListener('resize', updateScrollState);
+    return () => window.removeEventListener('resize', updateScrollState);
+  }, [updateScrollState, projects.length]);
+
+  const scrollByCard = (direction) => {
+    const track = trackRef.current;
+    const card = track?.firstElementChild;
+    if (!card) return;
+    const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+    track.scrollBy({ left: direction * (card.offsetWidth + gap), behavior: 'smooth' });
+  };
 
   return (
     <section id="projects" className="section">
       <div className="container">
-        <Reveal as="h2" className="section-title">
-          Projects
-        </Reveal>
-        <div className="projects-grid">
-          {visible.map((project, index) => (
-            <Reveal key={project.title} delay={index * 90}>
+        <div className="projects-header">
+          <Reveal as="h2" className="section-title">
+            Projects
+          </Reveal>
+          {(canScroll.left || canScroll.right) && (
+            <div className="projects-nav">
+              <button
+                type="button"
+                className="projects-nav-btn"
+                onClick={() => scrollByCard(-1)}
+                disabled={!canScroll.left}
+                aria-label="Previous projects"
+              >
+                ‹
+              </button>
+              <button
+                type="button"
+                className="projects-nav-btn"
+                onClick={() => scrollByCard(1)}
+                disabled={!canScroll.right}
+                aria-label="Next projects"
+              >
+                ›
+              </button>
+            </div>
+          )}
+        </div>
+        <Reveal delay={90}>
+          <div
+            className="projects-track"
+            ref={trackRef}
+            onScroll={updateScrollState}
+            tabIndex={0}
+            aria-label="Projects, scroll horizontally to see more"
+          >
+            {projects.map((project) => (
               <article
+                key={project.title}
                 className="project-card"
                 onMouseMove={handleTilt}
                 onMouseLeave={resetTilt}
               >
                 <div className="project-card-spot" aria-hidden="true" />
+                {project.images?.length > 0 && (
+                  <button
+                    type="button"
+                    className="project-cover"
+                    onClick={() => setGalleryProject(project)}
+                    aria-label={`View ${project.images.length} screenshots of ${project.title}`}
+                  >
+                    <img src={project.images[0]} alt="" loading="lazy" />
+                    <span className="project-cover-badge">
+                      View {project.images.length} screenshots
+                    </span>
+                  </button>
+                )}
                 <h3 className="project-title">{project.title}</h3>
                 <p className="project-description">{project.description}</p>
                 <ul className="project-tech">
@@ -74,20 +141,20 @@ function Projects({ projects }) {
                   )}
                 </div>
               </article>
-            </Reveal>
-          ))}
-        </div>
-        {hasMore && (
-          <div className="projects-toggle">
-            <button
-              className="btn btn-secondary"
-              onClick={() => setExpanded(!expanded)}
-            >
-              {expanded ? 'Show less' : 'View more'}
-            </button>
+            ))}
           </div>
-        )}
+        </Reveal>
       </div>
+      <Modal
+        isOpen={galleryProject !== null}
+        onClose={() => setGalleryProject(null)}
+        title={galleryProject ? `${galleryProject.title} screenshots` : ''}
+        className="modal-panel-wide"
+      >
+        {galleryProject && (
+          <ProjectGallery title={galleryProject.title} images={galleryProject.images} />
+        )}
+      </Modal>
     </section>
   );
 }

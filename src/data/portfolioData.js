@@ -1,3 +1,6 @@
+const screenshots = (folder, count) =>
+  Array.from({ length: count }, (_, i) => `/projects/${folder}/${i + 1}.jpg`);
+
 export const portfolio = {
   name: 'Marc Eiron P. Hernandez',
   shortName: 'Marc Hernandez',
@@ -53,6 +56,7 @@ export const portfolio = {
       description:
         'IoT-based air quality monitoring and volcanic smog forecasting system for Lipa City, built for my thesis. Detects pollutants such as particulate matter, CO, and NO2, and forecasts volcanic smog (laho) risk from Taal Volcano using an LSTM model.',
       tech: ['React', 'Flask', 'Python', 'C++', 'Firebase', 'LSTM', 'Render'],
+      images: screenshots('lipaircast', 7),
       liveUrl: '#',
       repoUrl: '#',
     },
@@ -61,6 +65,7 @@ export const portfolio = {
       description:
         'A school equipment reservation system that lets students and staff book tech equipment — microphones, speakers, HDMI cables, projectors, and more — ahead of time, reducing scheduling conflicts and manual tracking.',
       tech: ['React', 'Node.js', 'MongoDB'],
+      images: screenshots('mhub', 7),
       liveUrl: '#',
       repoUrl: '#',
     },
@@ -69,14 +74,16 @@ export const portfolio = {
       description:
         'A fully functional coffee shop point-of-sale mobile application. Handles order management, menu customization, and transaction processing, built and tested on a real device using Expo Go.',
       tech: ['React Native', 'Expo Go', 'MongoDB', 'Node.js'],
+      images: screenshots('caffeinate', 4),
       liveUrl: '#',
       repoUrl: '#',
     },
     {
-      title: 'BARDHIE',
+      title: 'BARDY',
       description:
         'A locally-run, background AI study companion for Windows. Supports voice commands, AI flashcard and quiz generation, document summarization, and a focus mode, all processed on-device for privacy — no cloud dependency required.',
       tech: ['Tauri', 'React', 'TypeScript', 'Rust', 'Ollama', 'Python', 'FastAPI', 'SQLite'],
+      images: screenshots('bardy', 17),
       liveUrl: '#',
       repoUrl: '#',
     },

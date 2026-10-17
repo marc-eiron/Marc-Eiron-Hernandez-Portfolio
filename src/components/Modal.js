@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-function Modal({ isOpen, onClose, title, children }) {
+function Modal({ isOpen, onClose, title, className = '', children }) {
   useEffect(() => {
     if (!isOpen) return;
 
@@ -23,7 +23,7 @@ function Modal({ isOpen, onClose, title, children }) {
   return (
     <div className="modal-overlay" onMouseDown={onClose}>
       <div
-        className="modal-panel"
+        className={`modal-panel ${className}`.trim()}
         role="dialog"
         aria-modal="true"
         aria-label={title}

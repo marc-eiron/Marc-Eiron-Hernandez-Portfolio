@@ -56,7 +56,7 @@ export const resume = {
     {
       title: 'Caffeinate',
       subtitle: 'Coffee Shop POS Mobile Application',
-      tech: ['React Native', 'Expo Go', 'MongoDB', 'GitHub'],
+      tech: ['React Native', 'Expo Go', 'MongoDB', 'Git'],
       highlights: [
         'Personally developed a React Native point-of-sale application for coffee shop operations, with MongoDB used as the database and the application tested through Expo Go.',
         'Implemented core POS functionality including product selection, add-to-cart, checkout, payments, inventory/stock checking, and related transaction workflows.',
@@ -65,7 +65,7 @@ export const resume = {
     {
       title: 'LIPAir CAST',
       subtitle: 'IoT-Based Air Quality Monitoring and Volcanic Smog Forecasting in Lipa City Using LSTM',
-      tech: ['Python', 'C++', 'React', 'Firebase', 'Flask', 'GitHub', 'Render'],
+      tech: ['Python', 'C++', 'React', 'Firebase', 'Flask', 'Git', 'Render'],
       highlights: [
         'Developed an IoT-based device for monitoring air quality in Lipa City, Batangas, with data presented through a public-facing web application.',
         'Developed the backend using Firebase and Flask to support data management and integration of the machine learning model.',
@@ -75,10 +75,29 @@ export const resume = {
     {
       title: 'MHUB Equipment Reservation System',
       subtitle: null,
-      tech: ['React', 'Supabase', 'GitHub'],
+      tech: ['React', 'Supabase', 'Git'],
       highlights: [
         'Developed a web-based multimedia equipment reservation system that allows students to reserve school equipment without visiting the office to queue.',
         "Designed the web application's UI/UX and connected the database design to support system functionality.",
+      ],
+    },
+    {
+      title: 'Inventory Management System',
+      subtitle: null,
+      tech: ['React', 'MongoDB', 'Git'],
+      highlights: [
+        'Developed a web-based inventory management system to help organize and manage company inventory efficiently.',
+        'Implemented CRUD (Create, Read, Update, Delete) functionality to manage inventory items and maintain accurate records.',
+        'Integrated sorting features to organize inventory by item ID, stock quantity, and item category for easier tracking and management.',
+      ],
+    },
+    {
+      title: 'Job Finder',
+      subtitle: null,
+      tech: ['React Native', 'MongoDB', 'REST API', 'Git', 'Expo Go'],
+      highlights: [
+        'Developed a mobile application that enables users to search for job opportunities, apply for suitable positions, and track their job applications.',
+        'Integrated a REST API to retrieve and display available job listings on the frontend, while using MongoDB to store saved jobs and manage application records for efficient job tracking.',
       ],
     },
   ],
